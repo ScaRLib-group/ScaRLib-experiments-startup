@@ -1,20 +1,35 @@
 plugins {
     id("java")
+    scala
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+group = "io.github.davidedomini"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
+scala {
+    zincVersion.set("1.6.1")
 }
 
-tasks.getByName<Test>("test") {
-    useJUnitPlatform()
+
+sourceSets {
+    main {
+        scala {
+            setSrcDirs(listOf("src/main/scala"))
+        }
+    }
+    test {
+        scala {
+            setSrcDirs(listOf("src/test/scala"))
+        }
+    }
+}
+
+dependencies {
+    implementation("org.scala-lang:scala3-library_3:3.2.2")
+    implementation("io.github.davidedomini:scarlib-core:1.5.0")
+    implementation("io.github.davidedomini:dsl-core:1.5.0")
 }
