@@ -1,4 +1,4 @@
-package experiments
+package experiments.training
 
 object SimpleExperiment extends App {
 

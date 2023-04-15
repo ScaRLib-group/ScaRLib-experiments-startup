@@ -43,7 +43,7 @@ tasks.register<JavaExec>("simpleExperimentTraining") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("simpleExperimentGui") {
+tasks.register<JavaExec>("simpleExperimentTrainingGui") {
     group = "ScaRLib Training"
     mainClass.set("experiments.training.SimpleExperimentTraining")
     jvmArgs("-Dsun.java2d.opengl=false")
