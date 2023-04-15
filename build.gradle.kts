@@ -34,3 +34,34 @@ dependencies {
     implementation("io.github.davidedomini:dsl-core:1.6.4")
     implementation("io.github.davidedomini:alchemist-scafi:1.6.4")
 }
+
+
+tasks.register<JavaExec>("simpleExperimentTraining") {
+    group = "ScaRLib Training"
+    mainClass.set("experiments.training.SimpleExperimentTraining")
+    jvmArgs("-Dsun.java2d.opengl=false")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("simpleExperimentGui") {
+    group = "ScaRLib Training"
+    mainClass.set("experiments.training.SimpleExperimentTraining")
+    jvmArgs("-Dsun.java2d.opengl=false")
+    args = listOf("20")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("simpleExperimentEval") {
+    group = "ScaRLib Training"
+    mainClass.set("experiments.evaluation.SimpleExperimentEval")
+    jvmArgs("-Dsun.java2d.opengl=false")
+    classpath = sourceSets["main"].runtimeClasspath
+}
+
+tasks.register<JavaExec>("simpleExperimentEvalGui") {
+    group = "ScaRLib Training"
+    mainClass.set("experiments.evaluation.SimpleExperimentEval")
+    jvmArgs("-Dsun.java2d.opengl=false")
+    args = listOf("20")
+    classpath = sourceSets["main"].runtimeClasspath
+}
