@@ -1,3 +1,5 @@
-package experiments.evaluation object SimpleExperimentEval {
+package experiments.evaluation
+
+object SimpleExperimentEval extends App{
 
 }

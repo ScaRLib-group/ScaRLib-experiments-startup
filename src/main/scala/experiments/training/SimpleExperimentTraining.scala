@@ -1,5 +1,5 @@
 package experiments.training
 
-object SimpleExperiment extends App {
+object SimpleExperimentTraining extends App {
 
 }
